@@ -94,6 +94,7 @@
   .brand{justify-self:center; display:flex; align-items:center; gap:10px; text-decoration:none;}
   .brand img{height:151.8px; width:auto; transition:height .3s ease;}
   .header-book{justify-self:end;}
+  .nav-book-btn{display:none;}
   header.is-scrolled .header-inner{height:126.5px;}
   header.is-scrolled .brand img{height:101.2px;}
   nav.primary-nav{display:flex; align-items:center; gap:24px;}
@@ -170,6 +171,17 @@
     }
     nav.primary-nav .nav-dropdown a:hover, nav.primary-nav .nav-dropdown a:focus-visible{
       background:none; color:var(--terracotta); opacity:1;
+    }
+    .header-inner{display:flex; justify-content:space-between; grid-template-columns:none;}
+    .brand{justify-self:unset;}
+    .header-book{display:none;}
+    nav.primary-nav a.nav-book-btn{
+      display:flex; width:100%; justify-content:center; align-items:center;
+      margin-top:18px; padding:14px 30px; border-bottom:none; border-radius:100px;
+      background:var(--terracotta); color:var(--warm-white); font-size:15px; font-weight:600;
+    }
+    nav.primary-nav a.nav-book-btn:hover, nav.primary-nav a.nav-book-btn:focus-visible{
+      background:var(--terracotta-dark); border-bottom-color:transparent;
     }
   }
 
@@ -570,6 +582,7 @@
             <a href="get-in-touch.html">Get in touch</a>
           </div>
         </div>
+        <a href="https://ren-space-acupuncture.uk3.cliniko.com/bookings" class="btn btn-primary nav-book-btn" target="_blank" rel="noopener">Book Now</a>
       </nav>
     </div>
     <a class="brand" href="../index.html#top" aria-label="Ren Space home">
