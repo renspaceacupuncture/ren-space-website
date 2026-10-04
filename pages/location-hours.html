@@ -108,7 +108,7 @@
     padding:6px 2px; border-bottom:2px solid transparent; white-space:nowrap;
   }
   nav.primary-nav a:hover, nav.primary-nav a:focus-visible{border-bottom-color:var(--terracotta);}
-  .menu-toggle{display:none; background:none; border:none; cursor:pointer; padding:8px; flex:none;}
+  .menu-toggle{display:none; background:none; border:none; cursor:pointer; padding:10px; flex:none;}
   .menu-toggle span{display:block; width:24px; height:2px; background:var(--ink); margin:5px 0; transition:transform .2s ease, opacity .2s ease;}
 
   /* ---------- header nav dropdowns (Treatment / About / Contact) ---------- */
@@ -172,7 +172,7 @@
     }
     .nav-dropdown-wrap.is-open .nav-dropdown{max-height:320px; padding:4px 0 10px; transform:none;}
     nav.primary-nav .nav-dropdown a{
-      width:100%; padding:10px 0 10px 16px; font-size:14.5px; font-weight:400; color:var(--ink); opacity:.85; border-bottom:none;
+      width:100%; padding:12px 0 12px 16px; font-size:14.5px; font-weight:400; color:var(--ink); opacity:.85; border-bottom:none;
     }
     nav.primary-nav .nav-dropdown a:hover, nav.primary-nav .nav-dropdown a:focus-visible{
       background:none; color:var(--terracotta); opacity:1;
@@ -263,8 +263,12 @@
   }
   .testimonial-dots{display:flex; justify-content:center; gap:10px; margin-top:32px;}
   .testimonial-dots .dot{
+    position:relative;
     width:9px; height:9px; border-radius:50%; border:none; padding:0; cursor:pointer;
     background:var(--lilac-line); transition:background .2s ease, transform .2s ease;
+  }
+  .testimonial-dots .dot::after{
+    content:""; position:absolute; top:50%; left:50%; width:44px; height:44px; transform:translate(-50%,-50%);
   }
   .testimonial-dots .dot:hover{background:var(--olive);}
   .testimonial-dots .dot.is-active{background:var(--olive); transform:scale(1.2);}
