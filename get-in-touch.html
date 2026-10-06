@@ -561,8 +561,17 @@
     background:var(--lilac); border:1px solid var(--lilac-line);
   }
   .reach-discovery p{margin:0; font-size:16px; line-height:1.6; color:var(--ink);}
-  .reach-discovery .reach-email{display:block; margin:4px 0; white-space:nowrap; font-size:clamp(14px,4.3vw,16px);}
-  @media (max-width:520px){ .reach-discovery{padding:24px 14px;} }
+  .reach-discovery{container-type:inline-size;}
+  .reach-discovery .reach-email{display:block; margin:4px 0; white-space:nowrap; text-align:center; font-weight:700; font-size:min(16px,5.6cqi);}
+  .reach-channels{container-type:inline-size;}
+  .reach-channel{max-width:100%;}
+  .reach-channel span{white-space:nowrap; font-size:min(15px, calc((100cqi - 76px) / 17.2));}
+  @media (max-width:520px){
+    .content-box{padding-inline:20px;}
+    .reach-discovery{padding:24px 12px;}
+    .reach-channel{padding:12px 16px;}
+    .reach-channel span{font-size:min(15px, calc((100cqi - 64px) / 17.2));}
+  }
 
   .reach-divider{height:1px; background:var(--lilac-line); margin:0 0 40px;}
 
