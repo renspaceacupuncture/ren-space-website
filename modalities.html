@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ren Space Acupuncture</title>
-<link rel="canonical" href="https://renspaceacupuncture.com/">
+<title>Modalities — Ren Space Acupuncture</title>
+<link rel="canonical" href="https://renspaceacupuncture.com/modalities">
 <link rel="preload" href="assets/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -211,11 +211,6 @@
   }
   .hero-content{position:absolute; inset:0; display:flex; align-items:flex-end;}
   .hero-content .wrap{width:100%; padding-bottom:clamp(48px,7vw,88px);}
-  .hero-wave{
-    position:absolute; left:0; right:0; bottom:0; width:100%;
-    height:clamp(28px,4.5vw,52px); line-height:0; overflow:hidden;
-  }
-  .hero-wave svg{display:block; width:100%; height:100%;}
   .hero-heading{
     color:var(--warm-white); margin-bottom:30px; text-align:center;
     text-shadow:0 2px 20px rgba(0,0,0,.28);
@@ -489,6 +484,89 @@
   .skip-link:focus{left:16px; top:16px;}
 
   a:focus-visible, button:focus-visible{outline:3px solid var(--terracotta); outline-offset:2px;}
+
+  /* ---------- info/treatment page template (added for sub-pages, v1) ---------- */
+  .page-hero{padding-block:clamp(56px,9vw,96px) 0;}
+  .page-hero .wrap{text-align:center;}
+  .page-hero .eyebrow{color:var(--warm-white); opacity:.85;}
+  .page-hero h1{color:var(--warm-white); max-width:none; white-space:nowrap; margin:0;}
+  @media (max-width:640px){ .page-hero h1{white-space:normal;} }
+
+  .page-content{padding-block:24px clamp(64px,9vw,120px);}
+  .content-box{
+    --intro-gap:clamp(12px,2vw,20px);
+    --intro-col1:0.5525; /* image column's share of the intro row (30% wider than the original .425) */
+    background:var(--warm-white); border:1px solid var(--lilac-line); border-radius:32px;
+    padding-block:clamp(24px,4vw,48px) clamp(40px,6.5vw,88px);
+    padding-inline:clamp(32px,7vw,88px);
+  }
+  .content-intro{
+    display:grid; grid-template-columns:1.235fr 1fr; gap:var(--intro-gap); align-items:center;
+    margin-bottom:8px;
+  }
+  @media (max-width:760px){ .content-intro{grid-template-columns:1fr;} }
+  .content-photo{
+    aspect-ratio:.95/1; width:100%; clip-path:url(#blobClip); background:var(--lilac-deep);
+    display:flex; align-items:center; justify-content:center; text-align:center; padding:28px;
+    border:1.5px solid var(--terracotta); overflow:hidden;
+  }
+  .content-photo .ph-label{font-size:12.5px; font-weight:600; letter-spacing:.06em; color:var(--terracotta-dark); max-width:22ch;}
+  .content-photo.has-image{
+    border:none; padding:32px; background:transparent; clip-path:none; aspect-ratio:1/1;
+  }
+  .content-photo.has-image img{width:100%; height:100%; object-fit:contain; display:block;}
+  .content-intro .intro-lead p{
+    font-size:17px; line-height:1.65; margin:0; max-width:56ch;
+  }
+
+  .content-box .body-copy p{
+    max-width:min(calc((100% - var(--intro-gap)) * var(--intro-col1) + var(--intro-gap) + 56ch), 100%);
+  }
+  .content-box .body-copy a{color:var(--terracotta-dark); text-decoration:underline; text-underline-offset:3px; font-weight:600;}
+  .content-box .body-copy a:hover{color:var(--terracotta);}
+  @media (max-width:760px){ .content-box .body-copy p{max-width:70ch;} }
+
+  .resource-links{
+    list-style:none; margin:28px 0 0; padding:0; display:flex; flex-direction:column; gap:10px;
+    max-width:min(calc((100% - var(--intro-gap)) * var(--intro-col1) + var(--intro-gap) + 56ch), 100%);
+  }
+  @media (max-width:760px){ .resource-links{max-width:70ch;} }
+  .resource-links a{color:var(--terracotta-dark); font-weight:600; text-decoration:underline; text-underline-offset:3px;}
+  .resource-links a:hover{color:var(--terracotta);}
+
+  /* ---------- modalities page: alternating photo/text rows ---------- */
+  .modality-list{display:flex; flex-direction:column; gap:clamp(48px,7vw,76px);}
+  .modality-row{
+    display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,5vw,56px); align-items:center;
+  }
+  .modality-row .modality-photo{order:1;}
+  .modality-row .modality-text{order:2;}
+  .modality-row.reverse .modality-photo{order:2;}
+  .modality-row.reverse .modality-text{order:1;}
+  .modality-photo{
+    aspect-ratio:1/1; width:100%; max-width:320px; margin-inline:auto;
+    display:flex; align-items:center; justify-content:center; padding:20px; flex:none;
+  }
+  .modality-photo img{width:100%; height:100%; object-fit:contain; display:block;}
+  .modality-text h3{
+    font-size:clamp(21px,2.4vw,27px); margin:0 0 .4em; color:var(--terracotta-dark);
+  }
+  .modality-text p{
+    font-size:16px; line-height:1.65; margin:0; color:var(--ink); max-width:58ch;
+  }
+  @media (max-width:760px){
+    .modality-row{grid-template-columns:1fr; text-align:left;}
+    .modality-row .modality-photo, .modality-row.reverse .modality-photo{order:1;}
+    .modality-row .modality-text, .modality-row.reverse .modality-text{order:2;}
+    .modality-photo{max-width:240px;}
+  }
+
+  .content-cta{
+    margin-top:40px; padding-top:32px; border-top:1px solid var(--lilac-line);
+    display:flex; flex-wrap:wrap; gap:18px; align-items:center; justify-content:space-between;
+  }
+  .content-cta p{margin:0; max-width:42ch; font-family:var(--font-display); font-size:19px; color:var(--ink);}
+
 </style>
 </head>
 <body>
@@ -513,7 +591,7 @@
         <span></span><span></span><span></span>
       </button>
       <nav class="primary-nav" id="primaryNav" aria-label="Primary">
-        <a href="#top">Home</a>
+        <a href="./#top">Home</a>
         <div class="nav-dropdown-wrap">
           <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">
             Treatment
@@ -523,7 +601,7 @@
             <a href="pain-long-term-conditions">Pain &amp; Long-Term Conditions</a>
             <a href="menstrual-hormonal-pelvic-health">Menstrual, Hormonal &amp; Pelvic Health</a>
             <a href="stress-wellbeing-sleep">Stress, Sleep &amp; Wellbeing</a>
-            <a href="modalities">Modalities</a>
+            <a href="#top" aria-current="page">Modalities</a>
           </div>
         </div>
         <div class="nav-dropdown-wrap">
@@ -551,164 +629,96 @@
         <a href="https://ren-space-acupuncture.uk3.cliniko.com/bookings" class="btn btn-primary nav-book-btn" target="_blank" rel="noopener">Book Now</a>
       </nav>
     </div>
-    <a class="brand" href="#top" aria-label="Ren Space home">
+    <a class="brand" href="./#top" aria-label="Ren Space home">
       <img width="1023" height="1163" decoding="async" src="assets/img/ren-space-logo.webp" alt="Ren Space" />
     </a>
     <a href="https://ren-space-acupuncture.uk3.cliniko.com/bookings" class="btn btn-primary header-book" target="_blank" rel="noopener">Book Now</a>
   </div>
 </header>
 
-<main id="main">
+<main id="main" lang="en">
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero-media">
-      <img width="1920" height="1088" fetchpriority="high" decoding="async" src="assets/img/hero-acupuncture-needles.webp" alt="Close-up of acupuncture needles placed along a person's upper back and shoulder, in a calm treatment room with framed art softly out of focus in the background" />
-      <div class="hero-scrim" aria-hidden="true"></div>
-    </div>
-    <div class="hero-content">
-      <div class="wrap">
-        <h1 class="hero-heading"><span class="hero-tagline">A supportive space for personalised acupuncture</span></h1>
-      </div>
-    </div>
-    <div class="hero-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
-        <path d="M0,20 C240,55 480,-5 720,20 C960,45 1200,0 1440,20 L1440,60 L0,60 Z" style="fill:var(--warm-white);"></path>
-      </svg>
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="background:var(--lilac);">
+    <div class="wrap">
+      <h1 style="color:var(--ink);">Modalities</h1>
     </div>
   </section>
 
-  <!-- WHAT I SUPPORT -->
-  <section id="support" style="background:var(--warm-white);">
+  <!-- PAGE CONTENT -->
+  <section class="page-content" style="background:var(--lilac);">
     <div class="wrap">
-      <div class="section-head center">
-        <h2>Helping you navigate</h2>
-      </div>
-      <div class="shape-grid">
-        <article class="shape-card">
-          <div class="shape-visual">
-            <img width="884" height="930" loading="lazy" decoding="async" src="assets/img/treatment-shape-1.webp" alt="" />
-            <h3 class="shape-heading on-warm">Pain &amp; Long Term Conditions</h3>
-          </div>
-          <p class="shape-body">My practice supports people living with migraines, musculoskeletal complaints, fibromyalgia, digestive issues, and other ongoing or chronic presentations.</p>
-          <a href="pain-long-term-conditions" class="btn btn-secondary shape-cta">Learn more</a>
-        </article>
-        <article class="shape-card">
-          <div class="shape-visual">
-            <img width="946" height="922" loading="lazy" decoding="async" src="assets/img/treatment-shape-2.webp" alt="" />
-            <h3 class="shape-heading on-ink">Menstrual, Hormonal &amp; Pelvic Health</h3>
-          </div>
-          <p class="shape-body">I support people navigating endometriosis, PMOS (formerly PCOS), adenomyosis, fibroids, bladder issues, general menstrual health, and perimenopause/menopause.</p>
-          <a href="menstrual-hormonal-pelvic-health" class="btn btn-secondary shape-cta">Learn more</a>
-        </article>
-        <article class="shape-card">
-          <div class="shape-visual">
-            <img width="918" height="876" loading="lazy" decoding="async" src="assets/img/treatment-shape-3.webp" alt="" />
-            <h3 class="shape-heading on-warm">Stress, Sleep &amp; Wellbeing</h3>
-          </div>
-          <p class="shape-body">I help people manage anxiety, low mood, burnout, sleep difficulties and insomnia, and the overwhelm of a demanding pace of life.</p>
-          <a href="stress-wellbeing-sleep" class="btn btn-secondary shape-cta">Learn more</a>
-        </article>
-      </div>
-    </div>
-  </section>
+      <div class="content-box">
 
-  <div class="wave-divider" aria-hidden="true" style="background:var(--warm-white);">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
-      <path d="M0,20 C240,55 480,-5 720,20 C960,45 1200,0 1440,20 L1440,60 L0,60 Z" style="fill:var(--lilac);"></path>
-    </svg>
-  </div>
+        <div class="modality-list">
 
-  <!-- ABOUT LAUREN -->
-  <section id="about-lauren" style="background:var(--lilac);">
-    <div class="wrap">
-      <div class="about-grid">
-        <div class="about-photo has-image">
-          <img width="1024" height="1024" decoding="async" src="assets/img/lauren-portrait.webp" alt="Lauren, the practitioner at Ren Space, standing outdoors on a wooded path" />
+          <div class="modality-row">
+            <div class="modality-photo">
+              <img width="1024" height="1024" decoding="async" src="assets/img/modality-acupuncture.webp" alt="A patient's legs resting comfortably with acupuncture needles placed in the feet, part of the organic blob shapes used throughout the Ren Space brand" />
+            </div>
+            <div class="modality-text">
+              <h3>Acupuncture</h3>
+              <p>Fine, sterile, single-use needles are inserted at specific points on the body, selected according to your individual presentation and treatment plan. In Traditional Chinese Medicine, acupuncture points sit along channels, or meridians, through which Qi and Blood are understood to flow. Illness, pain, and imbalance are traditionally understood to arise when this flow becomes restricted or disrupted, and acupuncture is used to help restore its natural movement. Acupuncture is also understood to stimulate the nervous system and is thought to encourage the release of the body's own natural pain-relieving chemicals, alongside promoting a state of physical relaxation.</p>
+            </div>
+          </div>
+
+          <div class="modality-row reverse">
+            <div class="modality-photo">
+              <img width="1024" height="1024" loading="lazy" decoding="async" src="assets/img/modality-auricular.webp" alt="A practitioner applying a fine needle to a patient's outer ear, part of the organic blob shapes used throughout the Ren Space brand" />
+            </div>
+            <div class="modality-text">
+              <h3>Auricular Acupuncture</h3>
+              <p>Fine needles or seeds are applied to specific points on the outer ear. In Traditional Chinese Medicine, the ear is considered its own microsystem, believed to correspond to the whole body. Certain areas of the ear are also supplied by a branch of the vagus nerve, which is thought to play a role in regulating the body's rest-and-relaxation response – one of the reasons auricular acupuncture is often used specifically for stress and relaxation.</p>
+            </div>
+          </div>
+
+          <div class="modality-row">
+            <div class="modality-photo">
+              <img width="1024" height="1024" loading="lazy" decoding="async" src="assets/img/modality-moxa.webp" alt="A dish of dried mugwort with moxa cones and a moxa stick on a decorative tray, part of the organic blob shapes used throughout the Ren Space brand" />
+            </div>
+            <div class="modality-text">
+              <h3>Moxa</h3>
+              <p>The gentle warming of specific acupuncture points using a dried herb called mugwort, either held above the skin or attached to a needle. In Traditional Chinese Medicine, moxa is traditionally used to warm the body and support the movement of Qi and Blood, particularly where cold or stagnation is present. The warmth is also thought to encourage local blood flow and a sense of physical relaxation.</p>
+            </div>
+          </div>
+
+          <div class="modality-row reverse">
+            <div class="modality-photo">
+              <img width="1024" height="1024" loading="lazy" decoding="async" src="assets/img/modality-heatlamp.webp" alt="A heat lamp positioned beside a treatment couch, part of the organic blob shapes used throughout the Ren Space brand" />
+            </div>
+            <div class="modality-text">
+              <h3>Heat Lamp</h3>
+              <p>A lamp used to gently warm areas of the body during treatment, often alongside acupuncture or moxa. In Traditional Chinese Medicine, warmth is understood to support the flow of Qi and Blood in a similar way to moxa. The heat is also thought to encourage local circulation and ease muscular tension.</p>
+            </div>
+          </div>
+
+          <div class="modality-row">
+            <div class="modality-photo">
+              <img width="1024" height="1024" loading="lazy" decoding="async" src="assets/img/modality-cupping.webp" alt="A glass cupping vessel resting on skin, part of the organic blob shapes used throughout the Ren Space brand" />
+            </div>
+            <div class="modality-text">
+              <h3>Cupping &amp; Gua Sha</h3>
+              <p>In cupping, glass cups are applied to the skin, creating suction. With Gua sha, a smooth-edged tool is used to gently stroke the skin. In Traditional Chinese Medicine, these treatments are understood to help move stagnant Qi and Blood, and to work on what is sometimes described as trapped or stuck tension within the muscles and tissue. They are often used to increase local blood flow and support the release of tight or restricted fascia.</p>
+            </div>
+          </div>
+
+          <div class="modality-row reverse">
+            <div class="modality-photo">
+              <img width="1024" height="1024" loading="lazy" decoding="async" src="assets/img/modality-electro.webp" alt="Electroacupuncture leads clipped to needles in a patient's leg, part of the organic blob shapes used throughout the Ren Space brand" />
+            </div>
+            <div class="modality-text">
+              <h3>Electroacupuncture</h3>
+              <p>A small, gentle electrical current passed between selected needles, often used for musculoskeletal complaints. This builds on traditional acupuncture by providing continuous stimulation to specific points and channels, and different frequencies are thought to encourage the release of natural pain-relieving chemicals in the body.</p>
+            </div>
+          </div>
+
         </div>
-        <div>
-          <h2>About Lauren</h2>
-          <p>Hi, I'm Lauren, a licensed acupuncturist practising in Walthamstow and Dalston, dedicated to helping you through personalised, compassionate care.</p>
-          <p>I have a particular interest in supporting a wide range of long-term conditions, menstrual, hormonal and pelvic health, as well as pain - including musculoskeletal issues - stress, anxiety &amp; sleep.</p>
-          <p>My clinical approach is grounded in Traditional Chinese Medicine, and shaped by the belief that no two people's experiences are the same. My aim is to create a calm, kind and non-judgemental space where you feel heard, understood and supported.</p>
-          <p>I hold a Licentiate in Acupuncture (Lic.Ac) and am a fully insured member of the British Acupuncture Council.</p>
-          <div class="accreditation-row">
-            <img width="1352" height="457" loading="lazy" decoding="async" src="assets/img/bacc-member.webp" alt="British Acupuncture Council Member" />
-            <img width="814" height="382" loading="lazy" decoding="async" src="assets/img/psa-accredited-register.webp" alt="Professional Standards Authority - Accredited Register" />
-          </div>
-        </div>
+
       </div>
-    </div>
-  </section>
-
-  <div class="wave-divider" aria-hidden="true" style="background:var(--lilac);">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
-      <path d="M0,20 C240,55 480,-5 720,20 C960,45 1200,0 1440,20 L1440,60 L0,60 Z" style="fill:var(--olive);"></path>
-    </svg>
-  </div>
-
-  <!-- TESTIMONIALS -->
-  <section id="testimonials" style="background:var(--olive);">
-    <div class="wrap">
-      <h2 class="sr-only">What people say</h2>
-
-      <div class="testimonial-slider" data-testimonial-slider>
-        <div class="testimonial-card">
-          <div class="testimonial-track">
-            <blockquote class="testimonial-slide is-active" data-slide="0">
-              <p>&ldquo;I went to see Lauren for ongoing back and shoulder pain. After a few acupuncture sessions, I noticed a big improvement. Lauren was great throughout! Really listened to what I was experiencing and tailored the treatment around me. She was friendly, professional and made me feel completely at ease. I&rsquo;d definitely recommend her.&rdquo;</p>
-              <cite>&mdash; Raja, Clapton</cite>
-            </blockquote>
-            <blockquote class="testimonial-slide" data-slide="1" hidden>
-              <p>&ldquo;Lauren was nothing short of amazing. She made me feel completely comfortable and was non-judgmental which is what you would want when trying acupuncture for the first time. I felt the positive difference in my body on the walk to the station home after the first treatment. I was amazed by the instant improvement in my physical symptoms. Totally recommend!&rdquo;</p>
-              <cite>&mdash; May, Leytonstone</cite>
-            </blockquote>
-            <blockquote class="testimonial-slide" data-slide="2" hidden>
-              <p>&ldquo;I visited Lauren for acupuncture to help with stress. She takes the time to really get to know you and understand not just your body but also everything that might be affecting how you feel. She is calm and knowledgeable and I felt genuinely listened to, understood and cared for. I left each session feeling lighter, calmer and more balanced.&rdquo;</p>
-              <cite>&mdash; Amber, Finchley</cite>
-            </blockquote>
-            <blockquote class="testimonial-slide" data-slide="3" hidden>
-              <p>&ldquo;I visited Lauren to see if acupuncture could help relieve the pain and discomfort I had from an old wrist injury. She used a range of techniques over several sessions which provided excellent relief. She was very collaborative in her approach and adapted according to the symptoms I was experiencing at that time. I also found the treatments very relaxing and felt much calmer afterwards.&rdquo;</p>
-              <cite>&mdash; Mark, Walthamstow</cite>
-            </blockquote>
-          </div>
-          <div class="testimonial-dots" role="group" aria-label="Testimonial navigation">
-            <button type="button" class="dot is-active" aria-current="true" aria-label="Show testimonial 1 of 4"></button>
-            <button type="button" class="dot" aria-current="false" aria-label="Show testimonial 2 of 4"></button>
-            <button type="button" class="dot" aria-current="false" aria-label="Show testimonial 3 of 4"></button>
-            <button type="button" class="dot" aria-current="false" aria-label="Show testimonial 4 of 4"></button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="wave-divider" aria-hidden="true" style="background:var(--olive);">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
-      <path d="M0,20 C240,55 480,-5 720,20 C960,45 1200,0 1440,20 L1440,60 L0,60 Z" style="fill:var(--terracotta-dark);"></path>
-    </svg>
-  </div>
-
-  <!-- APPOINTMENTS -->
-  <section id="appointments" class="cta-band">
-    <div class="wrap">
-      <h2>Schedule your appointment online</h2>
-      <div class="cta-row" style="justify-content:center;">
-        <a href="https://ren-space-acupuncture.uk3.cliniko.com/bookings" class="btn btn-secondary on-dark" target="_blank" rel="noopener">Book an Appointment</a>
-      </div>
-      <h2 style="margin-top:.4em;">Have questions about treatment?</h2>
-      <p>Email me at <strong>info@renspaceacupuncture.com</strong> to book in a 15-minute call</p>
     </div>
   </section>
 
 </main>
-  <div class="wave-divider" aria-hidden="true" style="background:var(--terracotta-dark);">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
-      <path d="M0,20 C240,55 480,-5 720,20 C960,45 1200,0 1440,20 L1440,60 L0,60 Z" style="fill:var(--lilac);"></path>
-    </svg>
-  </div>
-
-
 
 <footer>
   <div class="footer-columns">
@@ -840,55 +850,6 @@
     if(menuToggleBtn) menuToggleBtn.addEventListener('click', function(){ closeAll(null); });
   })();
 
-  (function(){
-    var slider = document.querySelector('[data-testimonial-slider]');
-    if(!slider) return;
-    var slides = Array.prototype.slice.call(slider.querySelectorAll('.testimonial-slide'));
-    var dots = Array.prototype.slice.call(slider.querySelectorAll('.dot'));
-    if(!slides.length || !dots.length) return;
-    var current = 0;
-    var AUTOPLAY_MS = 7000;
-    var timer = null;
-    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function show(i){
-      current = (i + slides.length) % slides.length;
-      slides.forEach(function(slide, idx){
-        var active = idx === current;
-        slide.classList.toggle('is-active', active);
-        if(active){ slide.removeAttribute('hidden'); } else { slide.setAttribute('hidden', ''); }
-      });
-      dots.forEach(function(dot, idx){
-        var active = idx === current;
-        dot.classList.toggle('is-active', active);
-        dot.setAttribute('aria-current', active ? 'true' : 'false');
-      });
-    }
-
-    function stopAutoplay(){
-      if(timer){ clearInterval(timer); timer = null; }
-    }
-    function startAutoplay(){
-      if(reduceMotion || slides.length < 2) return;
-      stopAutoplay();
-      timer = setInterval(function(){ show(current + 1); }, AUTOPLAY_MS);
-    }
-
-    dots.forEach(function(dot, idx){
-      dot.addEventListener('click', function(){
-        show(idx);
-        startAutoplay();
-      });
-    });
-
-    slider.addEventListener('mouseenter', stopAutoplay);
-    slider.addEventListener('mouseleave', startAutoplay);
-    slider.addEventListener('focusin', stopAutoplay);
-    slider.addEventListener('focusout', startAutoplay);
-
-    show(0);
-    startAutoplay();
-  })();
 </script>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ren Space Acupuncture</title>
-<link rel="canonical" href="https://renspaceacupuncture.com/">
+<title>Privacy Notice — Ren Space Acupuncture</title>
+<link rel="canonical" href="https://renspaceacupuncture.com/privacy-notice">
 <link rel="preload" href="assets/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -211,11 +211,6 @@
   }
   .hero-content{position:absolute; inset:0; display:flex; align-items:flex-end;}
   .hero-content .wrap{width:100%; padding-bottom:clamp(48px,7vw,88px);}
-  .hero-wave{
-    position:absolute; left:0; right:0; bottom:0; width:100%;
-    height:clamp(28px,4.5vw,52px); line-height:0; overflow:hidden;
-  }
-  .hero-wave svg{display:block; width:100%; height:100%;}
   .hero-heading{
     color:var(--warm-white); margin-bottom:30px; text-align:center;
     text-shadow:0 2px 20px rgba(0,0,0,.28);
@@ -489,6 +484,105 @@
   .skip-link:focus{left:16px; top:16px;}
 
   a:focus-visible, button:focus-visible{outline:3px solid var(--terracotta); outline-offset:2px;}
+
+  /* ---------- info/treatment page template (added for sub-pages, v1) ---------- */
+  .page-hero{padding-block:clamp(56px,9vw,96px) 0;}
+  .page-hero .wrap{text-align:center;}
+  .page-hero .eyebrow{color:var(--warm-white); opacity:.85;}
+  .page-hero h1{color:var(--warm-white); max-width:none; white-space:nowrap; margin:0;}
+  @media (max-width:640px){ .page-hero h1{white-space:normal;} }
+
+  .page-content{padding-block:24px clamp(64px,9vw,120px);}
+  .content-box{
+    --intro-gap:clamp(12px,2vw,20px);
+    --intro-col1:0.5525; /* image column's share of the intro row (30% wider than the original .425) */
+    background:var(--warm-white); border:1px solid var(--lilac-line); border-radius:32px;
+    padding-block:clamp(24px,4vw,48px) clamp(40px,6.5vw,88px);
+    padding-inline:clamp(32px,7vw,88px);
+  }
+  .content-intro{
+    display:grid; grid-template-columns:1.235fr 1fr; gap:var(--intro-gap); align-items:center;
+    margin-bottom:8px;
+  }
+  @media (max-width:760px){ .content-intro{grid-template-columns:1fr;} }
+  .content-photo{
+    aspect-ratio:.95/1; width:100%; clip-path:url(#blobClip); background:var(--lilac-deep);
+    display:flex; align-items:center; justify-content:center; text-align:center; padding:28px;
+    border:1.5px solid var(--terracotta); overflow:hidden;
+  }
+  .content-photo .ph-label{font-size:12.5px; font-weight:600; letter-spacing:.06em; color:var(--terracotta-dark); max-width:22ch;}
+  .content-photo.has-image{
+    border:none; padding:32px; background:transparent; clip-path:none; aspect-ratio:1/1;
+  }
+  .content-photo.has-image img{width:100%; height:100%; object-fit:contain; display:block;}
+  .content-intro .intro-lead p{
+    font-size:17px; line-height:1.65; margin:0; max-width:56ch;
+  }
+
+  .content-box .body-copy p{
+    max-width:min(calc((100% - var(--intro-gap)) * var(--intro-col1) + var(--intro-gap) + 56ch), 100%);
+  }
+  .content-box .body-copy a{color:var(--terracotta-dark); text-decoration:underline; text-underline-offset:3px; font-weight:600;}
+  .content-box .body-copy a:hover{color:var(--terracotta);}
+  @media (max-width:760px){ .content-box .body-copy p{max-width:70ch;} }
+
+  .resource-links{
+    list-style:none; margin:28px 0 0; padding:0; display:flex; flex-direction:column; gap:10px;
+    max-width:min(calc((100% - var(--intro-gap)) * var(--intro-col1) + var(--intro-gap) + 56ch), 100%);
+  }
+  @media (max-width:760px){ .resource-links{max-width:70ch;} }
+  .resource-links a{color:var(--terracotta-dark); font-weight:600; text-decoration:underline; text-underline-offset:3px;}
+  .resource-links a:hover{color:var(--terracotta);}
+
+  .content-cta{
+    margin-top:40px; padding-top:32px; border-top:1px solid var(--lilac-line);
+    display:flex; flex-wrap:wrap; gap:18px; align-items:center; justify-content:space-between;
+  }
+  .content-cta p{margin:0; max-width:42ch; font-family:var(--font-display); font-size:19px; color:var(--ink);}
+
+
+  /* ---------- faqs page: pill accordion (inspired by reference: pill rows, chevron, expands to white card) ---------- */
+  .faq-pill-list{display:flex; flex-direction:column; gap:14px; max-width:760px; margin:0 auto;}
+  .faq-pill{background:var(--lilac); border:1px solid transparent; border-radius:26px; overflow:hidden; transition:background .2s ease, border-color .2s ease;}
+  .faq-pill[open]{background:var(--white); border-color:var(--lilac-line); box-shadow:0 12px 32px rgba(69,59,53,.08);}
+  .faq-pill summary{
+    cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between;
+    gap:16px; padding:19px 26px; font-family:var(--font-body); font-weight:600; font-size:15.5px; line-height:1.4; color:var(--ink);
+  }
+  .faq-pill summary::-webkit-details-marker{display:none;}
+  .faq-pill[open] summary{color:var(--terracotta-dark); padding-bottom:6px;}
+  .faq-pill .chevron{
+    flex:none; width:30px; height:30px; border-radius:50%; background:var(--warm-white); color:var(--terracotta);
+    display:flex; align-items:center; justify-content:center; transition:transform .25s ease, background .2s ease, color .2s ease;
+  }
+  .faq-pill .chevron svg{width:10px; height:7px; stroke:currentColor; fill:none; stroke-width:1.6;}
+  .faq-pill[open] .chevron{transform:rotate(180deg); background:var(--terracotta); color:var(--warm-white);}
+  .faq-pill-body{padding:0 26px 22px;}
+  .faq-pill-body p{margin:0; font-size:14.5px; line-height:1.6; color:var(--ink); opacity:.85; max-width:64ch;}
+  .faq-pill summary:focus-visible{outline:3px solid var(--terracotta); outline-offset:-3px; border-radius:20px;}
+  .faq-closing{margin-top:36px; padding-top:28px; border-top:1px solid var(--lilac-line); text-align:center; max-width:760px; margin-inline:auto;}
+  .faq-closing p{margin:0; font-size:16px; line-height:1.6; color:var(--ink);}
+  .faq-closing a{color:var(--terracotta-dark); font-weight:600; text-decoration:underline; text-underline-offset:3px;}
+  .faq-closing a:hover{color:var(--terracotta);}
+  /* ---------- privacy notice page: legal section layout ---------- */
+  .privacy-meta{font-size:13.5px; color:var(--ink); opacity:.65; font-style:italic; margin:0 0 32px;}
+  .privacy-copy{max-width:72ch; margin:0 auto;}
+  .privacy-section{margin-top:22px;}
+  .privacy-section:first-child{margin-top:0;}
+  .privacy-heading{
+    font-family:var(--font-display); font-weight:700; font-size:16px;
+    color:var(--ink); margin:0 0 8px;
+  }
+  .privacy-copy p{margin:0 0 16px; line-height:1.65; color:var(--ink);}
+  .privacy-copy p:last-child{margin-bottom:0;}
+  .privacy-intro-note{font-size:14.5px; color:var(--ink); opacity:.8; font-style:italic; margin:0 0 16px;}
+  .privacy-copy ol, .privacy-copy ul{margin:0 0 16px; padding-left:1.3em; display:flex; flex-direction:column; gap:12px;}
+  .privacy-copy ol:last-child, .privacy-copy ul:last-child{margin-bottom:0;}
+  .privacy-copy li{line-height:1.65; color:var(--ink);}
+  .privacy-copy a{color:var(--ink); text-decoration:underline; text-underline-offset:3px; font-weight:600;}
+  .privacy-copy a:hover{opacity:.72;}
+  @media (max-width:760px){ .privacy-copy{max-width:100%;} }
+
 </style>
 </head>
 <body>
@@ -513,7 +607,7 @@
         <span></span><span></span><span></span>
       </button>
       <nav class="primary-nav" id="primaryNav" aria-label="Primary">
-        <a href="#top">Home</a>
+        <a href="./#top">Home</a>
         <div class="nav-dropdown-wrap">
           <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">
             Treatment
@@ -551,164 +645,163 @@
         <a href="https://ren-space-acupuncture.uk3.cliniko.com/bookings" class="btn btn-primary nav-book-btn" target="_blank" rel="noopener">Book Now</a>
       </nav>
     </div>
-    <a class="brand" href="#top" aria-label="Ren Space home">
+    <a class="brand" href="./#top" aria-label="Ren Space home">
       <img width="1023" height="1163" decoding="async" src="assets/img/ren-space-logo.webp" alt="Ren Space" />
     </a>
     <a href="https://ren-space-acupuncture.uk3.cliniko.com/bookings" class="btn btn-primary header-book" target="_blank" rel="noopener">Book Now</a>
   </div>
 </header>
 
-<main id="main">
+<main id="main" lang="en">
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero-media">
-      <img width="1920" height="1088" fetchpriority="high" decoding="async" src="assets/img/hero-acupuncture-needles.webp" alt="Close-up of acupuncture needles placed along a person's upper back and shoulder, in a calm treatment room with framed art softly out of focus in the background" />
-      <div class="hero-scrim" aria-hidden="true"></div>
-    </div>
-    <div class="hero-content">
-      <div class="wrap">
-        <h1 class="hero-heading"><span class="hero-tagline">A supportive space for personalised acupuncture</span></h1>
-      </div>
-    </div>
-    <div class="hero-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
-        <path d="M0,20 C240,55 480,-5 720,20 C960,45 1200,0 1440,20 L1440,60 L0,60 Z" style="fill:var(--warm-white);"></path>
-      </svg>
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="background:var(--lilac);">
+    <div class="wrap">
+      <h1 style="color:var(--ink);">Privacy Notice</h1>
     </div>
   </section>
 
-  <!-- WHAT I SUPPORT -->
-  <section id="support" style="background:var(--warm-white);">
+  <!-- PAGE CONTENT -->
+  <section class="page-content" style="background:var(--lilac);">
     <div class="wrap">
-      <div class="section-head center">
-        <h2>Helping you navigate</h2>
-      </div>
-      <div class="shape-grid">
-        <article class="shape-card">
-          <div class="shape-visual">
-            <img width="884" height="930" loading="lazy" decoding="async" src="assets/img/treatment-shape-1.webp" alt="" />
-            <h3 class="shape-heading on-warm">Pain &amp; Long Term Conditions</h3>
-          </div>
-          <p class="shape-body">My practice supports people living with migraines, musculoskeletal complaints, fibromyalgia, digestive issues, and other ongoing or chronic presentations.</p>
-          <a href="pain-long-term-conditions" class="btn btn-secondary shape-cta">Learn more</a>
-        </article>
-        <article class="shape-card">
-          <div class="shape-visual">
-            <img width="946" height="922" loading="lazy" decoding="async" src="assets/img/treatment-shape-2.webp" alt="" />
-            <h3 class="shape-heading on-ink">Menstrual, Hormonal &amp; Pelvic Health</h3>
-          </div>
-          <p class="shape-body">I support people navigating endometriosis, PMOS (formerly PCOS), adenomyosis, fibroids, bladder issues, general menstrual health, and perimenopause/menopause.</p>
-          <a href="menstrual-hormonal-pelvic-health" class="btn btn-secondary shape-cta">Learn more</a>
-        </article>
-        <article class="shape-card">
-          <div class="shape-visual">
-            <img width="918" height="876" loading="lazy" decoding="async" src="assets/img/treatment-shape-3.webp" alt="" />
-            <h3 class="shape-heading on-warm">Stress, Sleep &amp; Wellbeing</h3>
-          </div>
-          <p class="shape-body">I help people manage anxiety, low mood, burnout, sleep difficulties and insomnia, and the overwhelm of a demanding pace of life.</p>
-          <a href="stress-wellbeing-sleep" class="btn btn-secondary shape-cta">Learn more</a>
-        </article>
-      </div>
-    </div>
-  </section>
+      <div class="content-box">
 
-  <div class="wave-divider" aria-hidden="true" style="background:var(--warm-white);">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
-      <path d="M0,20 C240,55 480,-5 720,20 C960,45 1200,0 1440,20 L1440,60 L0,60 Z" style="fill:var(--lilac);"></path>
-    </svg>
-  </div>
+        <div class="privacy-copy">
 
-  <!-- ABOUT LAUREN -->
-  <section id="about-lauren" style="background:var(--lilac);">
-    <div class="wrap">
-      <div class="about-grid">
-        <div class="about-photo has-image">
-          <img width="1024" height="1024" decoding="async" src="assets/img/lauren-portrait.webp" alt="Lauren, the practitioner at Ren Space, standing outdoors on a wooded path" />
+          <p class="privacy-meta">This privacy notice came into effect on 1 October 2026.</p>
+
+          <div class="privacy-section">
+            <h2 class="privacy-heading">Purpose of this privacy notice</h2>
+            <p>The processing of personal data in the United Kingdom is governed by the UK General Data Protection Regulation (the UK GDPR) and the Data Protection Act 2018. This legislation sets out your rights as an individual and my obligations as an organisation holding your personal data.</p>
+            <p>One of those rights is a right to be informed, which means I must provide you with information about the way in which I use, share and store your personal information.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h2 class="privacy-heading">Who am I?</h2>
+            <p>Lauren O'Donnell is the data controller for ren space acupuncture. This means I decide how your personal data is processed and for what purposes.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h2 class="privacy-heading">Whose information does this privacy notice apply to?</h2>
+            <p>This privacy notice applies to information I collect from:</p>
+            <ul>
+              <li>patients;</li>
+              <li>prospective patients;</li>
+              <li>former patients;</li>
+              <li>visitors to my website.</li>
+            </ul>
+          </div>
+
+          <div class="privacy-section">
+            <h2 class="privacy-heading">What is personal data?</h2>
+            <p>Personal data relates to a living individual who can be identified from that data. Identification can be by the information alone or in conjunction with any other information in the data controller's possession or likely to come into such possession. Examples of personal data I may hold about you include your contact and appointment details.</p>
+            <p>Special category data is a sub-category of personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, or trade union membership, and the processing of genetic data, biometric data for the purpose of uniquely identifying a natural person, data concerning health or data concerning a natural person's sex life or sexual orientation. Examples of special category data I may hold about you include your patient notes.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h2 class="privacy-heading">How do I process your personal data?</h2>
+            <p>I comply with my obligations under the UK GDPR and the Data Protection Act 2018 by keeping personal data up to date; by storing and destroying it securely; by not collecting or retaining excessive amounts of data; by protecting personal data from loss, misuse, unauthorised access and disclosure; and by ensuring that appropriate technical measures are in place to protect personal data. I use your personal data for the purposes set out below.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h2 class="privacy-heading">Sections 1&ndash;15: patients, prospective patients, former patients and visitors to my clinic</h2>
+            <ol start="1">
+              <li>I use your name, address, telephone number and email address to make and rearrange appointments. I am unable to send or receive encrypted emails so you should be aware that any emails I send or receive may not be protected in transit. I will also monitor any emails sent to me, including file attachments, for viruses or malicious software. Please be aware that you have a responsibility to ensure that any email you send to me is within the bounds of the law.</li>
+              <li>I use your name, address, telephone number and email address, only if I have your explicit consent, to send you marketing materials. I am unable to send or receive encrypted emails so you should be aware that any emails I send or receive may not be protected in transit. I will also monitor any emails sent to me, including file attachments, for viruses or malicious software. Please be aware that you have a responsibility to ensure that any email you send to me is within the bounds of the law.</li>
+              <li>Some patients and prospective patients return pre-first appointment questionnaires or tell me about their medical conditions and medication by email or online enquiry forms. I am unable to send or receive encrypted emails so you should be aware that any emails I send or receive may not be protected in transit. I will also monitor any emails sent to me, including file attachments, for viruses or malicious software. Please be aware that you have a responsibility to ensure that any email you send to me is within the bounds of the law.</li>
+              <li>I keep a permanent attendance register which records all appointments for patients attending my clinic, to keep a record of when you were treated for tax purposes and to secure potential evidence in the event of a criminal prosecution, civil litigation, insurance claim or complaint to my regulatory body, the British Acupuncture Council.</li>
+              <li>I may use your date of birth to help identify patients with the same name to avoid mistakes being made as to safe and appropriate treatment, for identification purposes if referring a patient to another health practitioner, and for identification purposes if writing to a registered medical practitioner so that they correctly identify the patient.</li>
+              <li>I use your presenting complaint and symptoms reported by you for the purposes of making a full traditional diagnosis, formulating treatment strategy and treatment planning.</li>
+              <li>I use any relevant medical and family history you have told me for making a full traditional diagnosis, formulating treatment strategy and treatment planning.</li>
+              <li>I use your GP's name and address in the event that I need to contact your GP, including in an emergency, and because it is a mandatory requirement in the British Acupuncture Code of Professional Conduct.</li>
+              <li>I use my clinical findings about your health and wellbeing for making a full traditional diagnosis, and formulating treatment strategy and treatment planning.</li>
+              <li>I keep a record of, and refer to, any treatment given and details of progress of your case, including reviews of treatment planning, to enable me to review the full traditional diagnosis, treatment strategy and planning, and to secure evidence in the event of criminal proceedings, civil litigation, an insurance claim or complaint.</li>
+              <li>I record and use any information and advice I have given, especially when referring patients to any other health professional, to help you receive the most appropriate treatment and to secure evidence in the event of criminal proceedings, civil litigation, an insurance claim or complaint.</li>
+              <li>I record any decisions made in conjunction with you to help you receive the most appropriate treatment and to secure evidence in the event of criminal proceedings, civil litigation, an insurance claim or complaint.</li>
+              <li>I keep accident records for any patients, visitors or staff who are involved in accidents at my clinic in accordance with UK Health and Safety legislation, including the Reporting of Injuries, Diseases and Dangerous Occurrences Regulations (RIDDOR), to comply with the law and to secure evidence in the event of criminal proceedings, civil litigation, an insurance claim or complaint.</li>
+              <li>In the event of an adverse incident occurring to any of my patients, I report the matter to the British Acupuncture Council and my insurance company, to enable the insurance company to deal with any potential claims and to help the British Acupuncture Council develop its safe practice guidelines, as well as providing research data and information for the BAcC's insurers and other interested parties.</li>
+              <li>Where relevant, I maintain records of the patient's consent to treatment, or the consent of their next-of-kin, in order to be able to prove that the patient (and/or parent/guardian/next of kin) has given informed consent to treatment, to secure evidence in the event of a civil claim, criminal prosecution, insurance claim or complaint.</li>
+            </ol>
+          </div>
+
+          <div class="privacy-section">
+            <h2 class="privacy-heading">Section 16: people who complain about my services</h2>
+            <ol start="16">
+              <li>When I receive a complaint from a person, I make up a file containing the details of the complaint. This normally contains the identity of the complainant and any other individuals involved in the complaint. I will only use the personal information I collect to process the complaint and to check on the level of service I provide. I usually have to disclose the complainant's identity to whoever the complaint is about. If a complainant doesn't want information identifying them to be disclosed, I will try to respect that, although it may not be possible to handle a complaint on an anonymous basis. I may need to provide personal information collected and processed in relation to complaints to the British Acupuncture Council or my insurance company. I will keep personal information contained in complaint files in line with my retention policy &mdash; information relating to a complaint will be retained for two years from closure, held in a secure environment, with access restricted according to the 'need to know' principle. Similarly, where enquiries are submitted to me, I will only use the information supplied to deal with the enquiry and any subsequent issues, and to check on the level of service I provide.</li>
+            </ol>
+          </div>
+
+          <div class="privacy-section">
+            <h2 class="privacy-heading">Sections 17&ndash;21: visitors to my website</h2>
+            <ol start="17">
+              <li>When someone visits my website I use a third-party service, Google Analytics, to collect standard internet log information and details of visitor behaviour patterns. I do this to find out things such as the number of visitors to the various parts of the site. This information is only processed in a way which does not identify anyone. I do not make, and do not allow Google to make, any attempt to find out the identities of those visiting my website. If I ever want to collect personally identifiable information through my website, I will be up front about this and will explain what I intend to do with it.</li>
+              <li>My website does not currently set any cookies beyond those strictly necessary for it to function. If this changes in future &mdash; for example, if I introduce analytics or other tools that use cookies to 'remember' users during or between visits &mdash; I will update this notice and, where required by law, ask for your consent first.</li>
+              <li>My website does not currently include a search function, so this section does not apply right now. If I add a search feature in future, I will update this notice to name the provider and explain how search queries are handled.</li>
+              <li>My website does not currently use a separate third-party security or performance service beyond the standard protections provided by the platform I use to build and publish it. If I introduce a dedicated security or performance service in future, I will update this notice to name it and explain how it processes visitor information.</li>
+              <li>I use a third-party service, GoDaddy, to host my current website. To deliver this service, GoDaddy processes standard log information, including the IP addresses of visitors to the site, in order to run and maintain it. For more information about how GoDaddy processes data, please see <a href="https://www.godaddy.com/en-uk/legal/agreements/privacy-policy" target="_blank" rel="noopener">GoDaddy's privacy policy</a>. I am in the process of building a new version of my website; when it replaces my current GoDaddy-hosted site, I will update this section to describe the hosting, analytics and any other third-party tools used on the new site instead.</li>
+            </ol>
+          </div>
+
+          <div class="privacy-section">
+            <h2 class="privacy-heading">Online booking</h2>
+            <p>I use a third-party service, Cliniko, to manage appointment bookings. The 'Open Booking Calendar' link on my website takes you to Cliniko's own booking page &mdash; it is not embedded within my website, so your browser leaves my website and goes directly to Cliniko's site. When you book an appointment through Cliniko, you will be asked to provide information such as your name, contact details and appointment preferences. Cliniko processes this information on my behalf, as my data processor, strictly to help me manage and confirm bookings, and I do not receive any additional information about you beyond what is needed to arrange and attend your appointment. For more information about how Cliniko processes your data, including its use of cookies, please see <a href="https://www.cliniko.com/privacy/" target="_blank" rel="noopener">Cliniko's privacy policy</a>.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h2 class="privacy-heading">Sharing your personal data</h2>
+            <p>Your personal data will be treated as strictly confidential, and will be shared:</p>
+            <ul>
+              <li>with named third parties with your explicit consent;</li>
+              <li>with the relevant authority such as the police or a court, if necessary for compliance with a legal obligation to which I am subject, e.g. a court order;</li>
+              <li>with your doctor or the police if necessary to protect yours or another person's life;</li>
+              <li>with the police or a local authority for the purpose of safeguarding children or vulnerable adults;</li>
+              <li>with my regulatory body, the British Acupuncture Council, or my insurance company, in the event of a complaint or insurance claim being brought against me; or</li>
+              <li>with my solicitor, in the event of any investigation or legal proceedings being brought against me.</li>
+            </ul>
+            <p>For further details about the situations when information about you might be shared, please see the <a href="https://ico.org.uk/for-the-public/personal-information/sharing-my-info/" target="_blank" rel="noopener">Information Commissioner's website</a>.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h2 class="privacy-heading">How long do I keep your personal data?</h2>
+            <p>I keep your personal data for no longer than reasonably necessary. I keep patient records for a period of 7 years in accordance with the <a href="https://www.acupuncture.org.uk/publiccontent/effective-practice/bacc-professional-codes.html" target="_blank" rel="noopener">British Acupuncture Code of Professional Conduct</a>.</p>
+            <p>At any time you may request that changes are made to your contact details.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h2 class="privacy-heading">Your rights and your personal data</h2>
+            <p>Unless subject to an exemption under the UK GDPR or the Data Protection Act 2018, you have certain rights with respect to your personal data, as set out below.</p>
+            <ul>
+              <li>The right to request a copy of your personal data which I hold about you.</li>
+              <li>The right to request that I correct any personal data if it is found to be inaccurate or out of date.</li>
+              <li>The right to request your personal data is erased where it is no longer necessary for me to retain such data.</li>
+              <li>The right to withdraw your consent to the processing at any time. This right does not apply where I am processing information using a lawful purpose other than consent.</li>
+              <li>The right to request that I provide you with your personal data and, where possible, to transmit that data directly to another data controller (known as the right to data portability), where applicable &mdash; this right only applies where the processing is based on consent or is necessary for the performance of a contract with you, and in either case the data is processed by automated means.</li>
+              <li>The right, where there is a dispute in relation to the accuracy or processing of your personal data, to request a restriction is placed on further processing.</li>
+              <li>The right to object to the processing of personal data, where applicable &mdash; this right only applies where processing is based on legitimate interests (or the performance of a task in the public interest/exercise of official authority), direct marketing, and processing for the purposes of scientific/historical research and statistics.</li>
+              <li>The right to be informed if your data is lost. I shall also inform the Information Commissioner's Office in accordance with the time limits in the UK GDPR.</li>
+              <li>The right to lodge a complaint with the Information Commissioner's Office.</li>
+            </ul>
+            <p>For further details about these rights, please see the <a href="https://ico.org.uk/for-the-public/is-my-information-being-handled-correctly/" target="_blank" rel="noopener">Information Commissioner's website</a>.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h2 class="privacy-heading">Further processing</h2>
+            <p>If I wish to use your personal data for a new purpose, not covered by this privacy notice, then I will provide you with a new notice explaining this new use prior to commencing the processing, and setting out the relevant purposes and processing conditions. Where and whenever necessary, I will seek your prior consent to the new processing.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h2 class="privacy-heading">Contact details</h2>
+            <p>To exercise any of the rights above, or for any queries or complaints, please contact me in the first instance at <a href="mailto:info@renspaceacupuncture.com">info@renspaceacupuncture.com</a>.</p>
+            <p>You can contact the Information Commissioner's Office on 0303 123 1113, or via <a href="https://ico.org.uk/global/contact-us/email/" target="_blank" rel="noopener">email</a>, or at the Information Commissioner's Office, Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF.</p>
+          </div>
+
         </div>
-        <div>
-          <h2>About Lauren</h2>
-          <p>Hi, I'm Lauren, a licensed acupuncturist practising in Walthamstow and Dalston, dedicated to helping you through personalised, compassionate care.</p>
-          <p>I have a particular interest in supporting a wide range of long-term conditions, menstrual, hormonal and pelvic health, as well as pain - including musculoskeletal issues - stress, anxiety &amp; sleep.</p>
-          <p>My clinical approach is grounded in Traditional Chinese Medicine, and shaped by the belief that no two people's experiences are the same. My aim is to create a calm, kind and non-judgemental space where you feel heard, understood and supported.</p>
-          <p>I hold a Licentiate in Acupuncture (Lic.Ac) and am a fully insured member of the British Acupuncture Council.</p>
-          <div class="accreditation-row">
-            <img width="1352" height="457" loading="lazy" decoding="async" src="assets/img/bacc-member.webp" alt="British Acupuncture Council Member" />
-            <img width="814" height="382" loading="lazy" decoding="async" src="assets/img/psa-accredited-register.webp" alt="Professional Standards Authority - Accredited Register" />
-          </div>
-        </div>
+
       </div>
-    </div>
-  </section>
-
-  <div class="wave-divider" aria-hidden="true" style="background:var(--lilac);">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
-      <path d="M0,20 C240,55 480,-5 720,20 C960,45 1200,0 1440,20 L1440,60 L0,60 Z" style="fill:var(--olive);"></path>
-    </svg>
-  </div>
-
-  <!-- TESTIMONIALS -->
-  <section id="testimonials" style="background:var(--olive);">
-    <div class="wrap">
-      <h2 class="sr-only">What people say</h2>
-
-      <div class="testimonial-slider" data-testimonial-slider>
-        <div class="testimonial-card">
-          <div class="testimonial-track">
-            <blockquote class="testimonial-slide is-active" data-slide="0">
-              <p>&ldquo;I went to see Lauren for ongoing back and shoulder pain. After a few acupuncture sessions, I noticed a big improvement. Lauren was great throughout! Really listened to what I was experiencing and tailored the treatment around me. She was friendly, professional and made me feel completely at ease. I&rsquo;d definitely recommend her.&rdquo;</p>
-              <cite>&mdash; Raja, Clapton</cite>
-            </blockquote>
-            <blockquote class="testimonial-slide" data-slide="1" hidden>
-              <p>&ldquo;Lauren was nothing short of amazing. She made me feel completely comfortable and was non-judgmental which is what you would want when trying acupuncture for the first time. I felt the positive difference in my body on the walk to the station home after the first treatment. I was amazed by the instant improvement in my physical symptoms. Totally recommend!&rdquo;</p>
-              <cite>&mdash; May, Leytonstone</cite>
-            </blockquote>
-            <blockquote class="testimonial-slide" data-slide="2" hidden>
-              <p>&ldquo;I visited Lauren for acupuncture to help with stress. She takes the time to really get to know you and understand not just your body but also everything that might be affecting how you feel. She is calm and knowledgeable and I felt genuinely listened to, understood and cared for. I left each session feeling lighter, calmer and more balanced.&rdquo;</p>
-              <cite>&mdash; Amber, Finchley</cite>
-            </blockquote>
-            <blockquote class="testimonial-slide" data-slide="3" hidden>
-              <p>&ldquo;I visited Lauren to see if acupuncture could help relieve the pain and discomfort I had from an old wrist injury. She used a range of techniques over several sessions which provided excellent relief. She was very collaborative in her approach and adapted according to the symptoms I was experiencing at that time. I also found the treatments very relaxing and felt much calmer afterwards.&rdquo;</p>
-              <cite>&mdash; Mark, Walthamstow</cite>
-            </blockquote>
-          </div>
-          <div class="testimonial-dots" role="group" aria-label="Testimonial navigation">
-            <button type="button" class="dot is-active" aria-current="true" aria-label="Show testimonial 1 of 4"></button>
-            <button type="button" class="dot" aria-current="false" aria-label="Show testimonial 2 of 4"></button>
-            <button type="button" class="dot" aria-current="false" aria-label="Show testimonial 3 of 4"></button>
-            <button type="button" class="dot" aria-current="false" aria-label="Show testimonial 4 of 4"></button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="wave-divider" aria-hidden="true" style="background:var(--olive);">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
-      <path d="M0,20 C240,55 480,-5 720,20 C960,45 1200,0 1440,20 L1440,60 L0,60 Z" style="fill:var(--terracotta-dark);"></path>
-    </svg>
-  </div>
-
-  <!-- APPOINTMENTS -->
-  <section id="appointments" class="cta-band">
-    <div class="wrap">
-      <h2>Schedule your appointment online</h2>
-      <div class="cta-row" style="justify-content:center;">
-        <a href="https://ren-space-acupuncture.uk3.cliniko.com/bookings" class="btn btn-secondary on-dark" target="_blank" rel="noopener">Book an Appointment</a>
-      </div>
-      <h2 style="margin-top:.4em;">Have questions about treatment?</h2>
-      <p>Email me at <strong>info@renspaceacupuncture.com</strong> to book in a 15-minute call</p>
     </div>
   </section>
 
 </main>
-  <div class="wave-divider" aria-hidden="true" style="background:var(--terracotta-dark);">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" focusable="false">
-      <path d="M0,20 C240,55 480,-5 720,20 C960,45 1200,0 1440,20 L1440,60 L0,60 Z" style="fill:var(--lilac);"></path>
-    </svg>
-  </div>
-
-
 
 <footer>
   <div class="footer-columns">
@@ -840,55 +933,6 @@
     if(menuToggleBtn) menuToggleBtn.addEventListener('click', function(){ closeAll(null); });
   })();
 
-  (function(){
-    var slider = document.querySelector('[data-testimonial-slider]');
-    if(!slider) return;
-    var slides = Array.prototype.slice.call(slider.querySelectorAll('.testimonial-slide'));
-    var dots = Array.prototype.slice.call(slider.querySelectorAll('.dot'));
-    if(!slides.length || !dots.length) return;
-    var current = 0;
-    var AUTOPLAY_MS = 7000;
-    var timer = null;
-    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function show(i){
-      current = (i + slides.length) % slides.length;
-      slides.forEach(function(slide, idx){
-        var active = idx === current;
-        slide.classList.toggle('is-active', active);
-        if(active){ slide.removeAttribute('hidden'); } else { slide.setAttribute('hidden', ''); }
-      });
-      dots.forEach(function(dot, idx){
-        var active = idx === current;
-        dot.classList.toggle('is-active', active);
-        dot.setAttribute('aria-current', active ? 'true' : 'false');
-      });
-    }
-
-    function stopAutoplay(){
-      if(timer){ clearInterval(timer); timer = null; }
-    }
-    function startAutoplay(){
-      if(reduceMotion || slides.length < 2) return;
-      stopAutoplay();
-      timer = setInterval(function(){ show(current + 1); }, AUTOPLAY_MS);
-    }
-
-    dots.forEach(function(dot, idx){
-      dot.addEventListener('click', function(){
-        show(idx);
-        startAutoplay();
-      });
-    });
-
-    slider.addEventListener('mouseenter', stopAutoplay);
-    slider.addEventListener('mouseleave', startAutoplay);
-    slider.addEventListener('focusin', stopAutoplay);
-    slider.addEventListener('focusout', startAutoplay);
-
-    show(0);
-    startAutoplay();
-  })();
 </script>
 </body>
 </html>
