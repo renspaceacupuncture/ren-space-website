@@ -508,6 +508,9 @@
     margin-bottom:8px;
   }
   @media (max-width:760px){ .content-intro{grid-template-columns:1fr;} }
+  .content-intro.photo-only{grid-template-columns:1fr; justify-items:center;}
+  .content-intro.photo-only .content-photo{width:55.25%; max-width:100%;}
+  @media (max-width:760px){ .content-intro.photo-only .content-photo{width:100%;} }
   .content-photo{
     aspect-ratio:.95/1; width:100%; clip-path:url(#blobClip); background:var(--lilac-deep);
     display:flex; align-items:center; justify-content:center; text-align:center; padding:28px;
@@ -626,12 +629,9 @@
     <div class="wrap">
       <div class="content-box">
 
-        <div class="content-intro">
+        <div class="content-intro photo-only">
           <div class="content-photo has-image">
             <img width="1024" height="1024" decoding="async" src="assets/img/treatment-menstrual-photo.webp" alt="A practitioner performing abdominal acupuncture with a moxibustion stick, part of the organic blob shapes used throughout the Ren Space brand" />
-          </div>
-          <div class="intro-lead">
-            <p>I support a range of hormonal and pelvic health concerns, including: endometriosis, PMOS (formerly known as PCOS) adenomyosis, fibroids, general menstrual health, bladder issues, and perimenopause/menopause – and I understand the debilitating and disrupting toll they can take.</p>
           </div>
         </div>
 
@@ -642,11 +642,6 @@
 
           <p>Treatment is tailored to your individual pattern, always working alongside any other care you're already receiving.</p>
           <p>Research continues to show how acupuncture’s effects on the nervous system, local blood flow and inflammation can bring potential benefits to pelvic and menstrual discomfort.</p>
-
-          <ul class="resource-links">
-            <li><a href="https://acupuncture.org.uk/fact-sheets/endometriosis/" target="_blank" rel="noopener">Read the clinical evidence for acupuncture and Endometriosis from the BAcC</a></li>
-            <li><a href="https://acupuncture.org.uk/fact-sheets/dysmenorrhoea/" target="_blank" rel="noopener">Read the clinical evidence for acupuncture and Dysmenorrhea from the BAcC</a></li>
-          </ul>
         </div>
 
       </div>

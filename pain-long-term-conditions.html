@@ -508,6 +508,9 @@
     margin-bottom:8px;
   }
   @media (max-width:760px){ .content-intro{grid-template-columns:1fr;} }
+  .content-intro.photo-only{grid-template-columns:1fr; justify-items:center;}
+  .content-intro.photo-only .content-photo{width:55.25%; max-width:100%;}
+  @media (max-width:760px){ .content-intro.photo-only .content-photo{width:100%;} }
   .content-photo{
     aspect-ratio:.95/1; width:100%; clip-path:url(#blobClip); background:var(--lilac-deep);
     display:flex; align-items:center; justify-content:center; text-align:center; padding:28px;
@@ -626,12 +629,9 @@
     <div class="wrap">
       <div class="content-box">
 
-        <div class="content-intro">
+        <div class="content-intro photo-only">
           <div class="content-photo has-image">
             <img width="1024" height="1024" decoding="async" src="assets/img/treatment-pain-photo.webp" alt="A practitioner's hands carefully positioning an acupuncture needle at a patient's shoulder, part of the organic blob shapes used throughout the Ren Space brand" />
-          </div>
-          <div class="intro-lead">
-            <p>I support people navigating a wide range of pain-related and long-term conditions, including migraines, musculoskeletal complaints, fibromyalgia, digestive issues, and other ongoing or chronic presentations.</p>
           </div>
         </div>
 
@@ -642,11 +642,6 @@
           <p>Acupuncture involves stimulating specific points on the body, and research has explored how this interacts with the nervous system’s pain-signalling pathways, including the body’s own natural opioids, such as endorphins.</p>
 
           <p>Acupuncture is one of the options identified by NICE as a treatment option for chronic primary pain (see full guidance <a href="https://www.nice.org.uk/guidance/ng193" target="_blank" rel="noopener">here</a>) and as a preventative treatment option for chronic tension-type headache (see full guidance <a href="https://www.nice.org.uk/guidance/cg150/chapter/Recommendations#management" target="_blank" rel="noopener">here</a>).</p>
-
-          <ul class="resource-links">
-            <li><a href="https://acupuncture.org.uk/fact-sheets/fibromyalgia-factsheet/" target="_blank" rel="noopener">Read the clinical evidence for acupuncture and Fibromyalgia from the BAcC</a></li>
-            <li><a href="https://acupuncture.org.uk/fact-sheets/headache/" target="_blank" rel="noopener">Read the clinical evidence for acupuncture and Headache from the BAcC</a></li>
-          </ul>
         </div>
 
       </div>

@@ -508,6 +508,9 @@
     margin-bottom:8px;
   }
   @media (max-width:760px){ .content-intro{grid-template-columns:1fr;} }
+  .content-intro.photo-only{grid-template-columns:1fr; justify-items:center;}
+  .content-intro.photo-only .content-photo{width:55.25%; max-width:100%;}
+  @media (max-width:760px){ .content-intro.photo-only .content-photo{width:100%;} }
   .content-photo{
     aspect-ratio:.95/1; width:100%; clip-path:url(#blobClip); background:var(--lilac-deep);
     display:flex; align-items:center; justify-content:center; text-align:center; padding:28px;
@@ -626,12 +629,9 @@
     <div class="wrap">
       <div class="content-box">
 
-        <div class="content-intro">
+        <div class="content-intro photo-only">
           <div class="content-photo has-image">
             <img width="1024" height="1024" decoding="async" src="assets/img/treatment-stress-photo.webp" alt="A practitioner's hand inserting an acupuncture needle into a patient's hand, part of the organic blob shapes used throughout the Ren Space brand" />
-          </div>
-          <div class="intro-lead">
-            <p>I support people navigating a wide range of stress-related and wellbeing concerns, including anxiety, low mood, burnout, sleep difficulties and insomnia, and the general overwhelm that can come with a demanding pace of life.</p>
           </div>
         </div>
 
@@ -642,11 +642,6 @@
 
           <p>As with everything I treat, your care is shaped around your individual pattern, working alongside any other support you're already receiving to support a sense of ease and balance in your daily life.</p>
           <p>Studies have looked at the effect of acupuncture on the autonomic nervous system, the part of the body that shifts between ‘fight or flight’ and ‘rest and digest’.</p>
-
-          <ul class="resource-links">
-            <li><a href="https://acupuncture.org.uk/fact-sheets/anxiety-and-acupuncture-factsheet/" target="_blank" rel="noopener">Read the clinical evidence for acupuncture and Anxiety from the BAcC</a></li>
-            <li><a href="https://acupuncture.org.uk/fact-sheets/insomnia/" target="_blank" rel="noopener">Read the clinical evidence for acupuncture and Insomnia from the BAcC</a></li>
-          </ul>
         </div>
 
       </div>
