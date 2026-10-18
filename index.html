@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ren Space Acupuncture</title>
+<meta name="description" content="Personalised acupuncture with Lauren in Walthamstow and Dalston, East London. A calm, supportive space with care tailored to you.">
+<meta property="og:site_name" content="Ren Space Acupuncture">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Ren Space Acupuncture">
+<meta property="og:description" content="Personalised acupuncture with Lauren in Walthamstow and Dalston, East London. A calm, supportive space with care tailored to you.">
+<meta property="og:url" content="https://renspaceacupuncture.com/">
+<meta property="og:image" content="https://renspaceacupuncture.com/assets/img/hero-acupuncture-needles.webp">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1088">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -307,6 +318,11 @@
   .shape-heading.on-ink{color:var(--ink);}
   .shape-heading.on-warm{color:var(--warm-white);}
   .shape-cta{padding:11px 24px; font-size:13.5px; flex:none;}
+  .shape-cta{transition:background .2s ease, color .2s ease, border-color .2s ease;}
+  /* hover/focus fill picks up the colour of the shape above the button */
+  .shape-card.shape-terracotta .shape-cta:hover, .shape-card.shape-terracotta .shape-cta:focus-visible{background:var(--terracotta); border-color:var(--terracotta); color:var(--warm-white);}
+  .shape-card.shape-olive .shape-cta:hover, .shape-card.shape-olive .shape-cta:focus-visible{background:var(--olive); border-color:var(--olive); color:var(--warm-white);}
+  .shape-card.shape-lilac .shape-cta:hover, .shape-card.shape-lilac .shape-cta:focus-visible{background:var(--lilac); border-color:var(--olive); color:var(--ink);}
 
   /* ---------- how it works: connected journey rail ---------- */
   .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-top:8px; position:relative;}
@@ -519,9 +535,7 @@
             <svg class="nav-caret" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5"/></svg>
           </button>
           <div class="nav-dropdown">
-            <a href="pain-long-term-conditions">Pain &amp; Long-Term Conditions</a>
-            <a href="menstrual-hormonal-pelvic-health">Menstrual, Hormonal &amp; Pelvic Health</a>
-            <a href="stress-wellbeing-sleep">Stress, Sleep &amp; Wellbeing</a>
+            <a href="treatments">Treatments</a>
             <a href="modalities">Modalities</a>
           </div>
         </div>
@@ -584,26 +598,47 @@
         <h2>Helping you navigate</h2>
       </div>
       <div class="shape-grid">
-        <article class="shape-card">
-          <div class="shape-visual">
-            <img width="884" height="930" loading="lazy" decoding="async" src="assets/img/treatment-shape-1.webp" alt="" />
-            <h3 class="shape-heading on-warm">Pain &amp; Long Term Conditions</h3>
-          </div>
-          <a href="pain-long-term-conditions" class="btn btn-secondary shape-cta">Learn more</a>
-        </article>
-        <article class="shape-card">
+        <article class="shape-card shape-lilac">
           <div class="shape-visual">
             <img width="946" height="922" loading="lazy" decoding="async" src="assets/img/treatment-shape-2.webp" alt="" />
             <h3 class="shape-heading on-ink">Menstrual, Hormonal &amp; Pelvic Health</h3>
           </div>
-          <a href="menstrual-hormonal-pelvic-health" class="btn btn-secondary shape-cta">Learn more</a>
+          <a href="treatments#menstrual" class="btn btn-secondary shape-cta">Learn more</a>
         </article>
-        <article class="shape-card">
+        <article class="shape-card shape-terracotta">
+          <div class="shape-visual">
+            <img width="884" height="930" loading="lazy" decoding="async" src="assets/img/treatment-shape-1.webp" alt="" />
+            <h3 class="shape-heading on-warm">Pain &amp; <span style="white-space:nowrap">Long-Term</span> Conditions</h3>
+          </div>
+          <a href="treatments#pain" class="btn btn-secondary shape-cta">Learn more</a>
+        </article>
+        <article class="shape-card shape-olive">
           <div class="shape-visual">
             <img width="918" height="876" loading="lazy" decoding="async" src="assets/img/treatment-shape-3.webp" alt="" />
-            <h3 class="shape-heading on-warm">Stress, Sleep &amp; Wellbeing</h3>
+            <h3 class="shape-heading on-warm">Sleep, Stress &amp; Emotional Wellbeing</h3>
           </div>
-          <a href="stress-wellbeing-sleep" class="btn btn-secondary shape-cta">Learn more</a>
+          <a href="treatments#stress" class="btn btn-secondary shape-cta">Learn more</a>
+        </article>
+        <article class="shape-card shape-terracotta">
+          <div class="shape-visual">
+            <img width="900" height="821" loading="lazy" decoding="async" src="assets/img/treatment-shape-4.webp" alt="" />
+            <h3 class="shape-heading on-warm">Digestive Wellbeing</h3>
+          </div>
+          <a href="treatments#digestive" class="btn btn-secondary shape-cta">Learn more</a>
+        </article>
+        <article class="shape-card shape-olive">
+          <div class="shape-visual">
+            <img width="900" height="803" loading="lazy" decoding="async" src="assets/img/treatment-shape-5.webp" alt="" />
+            <h3 class="shape-heading on-warm">Tension &amp; Movement</h3>
+          </div>
+          <a href="treatments#tension" class="btn btn-secondary shape-cta">Learn more</a>
+        </article>
+        <article class="shape-card shape-lilac">
+          <div class="shape-visual">
+            <img width="860" height="900" loading="lazy" decoding="async" src="assets/img/treatment-shape-6.webp" alt="" />
+            <h3 class="shape-heading on-ink">Seasonal &amp; Everyday Wellbeing</h3>
+          </div>
+          <a href="treatments#seasonal" class="btn btn-secondary shape-cta">Learn more</a>
         </article>
       </div>
     </div>
@@ -625,7 +660,7 @@
         <div>
           <h2>About Lauren</h2>
           <p>Hi, I'm Lauren, a licensed acupuncturist practising in Walthamstow and Dalston, dedicated to helping you through personalised, compassionate care.</p>
-          <p>I have a particular interest in supporting a wide range of long-term conditions, menstrual, hormonal and pelvic health, as well as pain - including musculoskeletal issues - stress, anxiety &amp; sleep.</p>
+          <p>I have a particular interest in supporting menstrual, hormonal and pelvic health, chronic conditions, pain - including musculoskeletal issues – as well as sleep, stress &amp; emotional wellbeing.</p>
           <p>My clinical approach is grounded in Traditional Chinese Medicine, and shaped by the belief that no two people's experiences are the same. My aim is to create a calm, kind and non-judgemental space where you feel heard, understood and supported.</p>
           <p>I hold a Licentiate in Acupuncture (Lic.Ac) and am a fully insured member of the British Acupuncture Council.</p>
           <div class="accreditation-row">
